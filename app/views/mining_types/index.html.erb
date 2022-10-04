@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Mining Types</h1>
+<h1><%= MiningType.model_name.human(count: @mining_types.count) %></h1>
 
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="thead thead-light">
     <tr>
       <th><%= @mining_types.human_attribute_name(:description) %></th>
       <th><%= @mining_types.human_attribute_name(:acronym) %></th>
@@ -18,12 +18,13 @@
         <td><%= mining_type.acronym %></td>
         <td><%= link_to t('links.show'), mining_type %></td>
         <td><%= link_to t('links.edit'), edit_mining_type_path(mining_type) %></td>
-        <td><%= link_to t('links.delete'), mining_type, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to t('links.delete'), mining_type, method: :delete, data: { confirm: t('messages.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-| <%= link_to 'Home', welcome_index_path %> |
-| <%= link_to 'Cadastrar', new_mining_type_path %> |
+<div class="nav justify-content-end">
+  <%= link_to t('new.mining_type'), new_mining_type_path, class: "btn btn-primary" %>
+</div>

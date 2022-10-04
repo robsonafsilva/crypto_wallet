@@ -5,22 +5,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>    
-    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>        
     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>  
     <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <h1></h1>
-    <%= yield %>
-
-    <script>
-      $.notify(
-        "Bem Vindo",
-        "success"       
-      );
-    </script>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg justify-content-end " style="background-color: #e3f2fd">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="" >      
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <%= link_to "HOME", root_path, class: "btn btn-outline-primary mr-2" %> 
+          </li>
+          <li class="nav-item active">
+             <%= link_to "Português", root_path(locale: 'pt-BR'), class: "btn btn-outline-primary mr-2" %>
+          </li>
+           <li class="nav-item active">
+            <%= link_to "English", root_path(locale: 'en'), class: "btn btn-outline-primary mr-2" %>
+          </li>      
+        </ul>       
+      </div>
+    </nav>      
+        <%= yield %>  
+    </div>   
+  
   </body>
 </html>

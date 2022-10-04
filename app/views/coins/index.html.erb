@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Moedas</h1>
+<h1><%= Coin.model_name.human(count: @coins.count) %></h1>
 
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="thead thead-light">
     <tr>
       <th><%= @coins.human_attribute_name(:description) %></th>
       <th><%= @coins.human_attribute_name(:acronym) %></th>
@@ -20,14 +20,13 @@
         <td><%= image_tag coin.url_image, size: "50x50" %></td>
         <td><%= link_to t('links.show'), coin %></td>
         <td><%= link_to t('links.edit'), edit_coin_path(coin) %></td>
-        <td><%= link_to t('links.delete'), coin, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to t('links.delete'), coin, method: :delete, data: { confirm: t('messages.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-| <%= link_to 'Home', welcome_index_path%> |
-<%= link_to 'Cadastrar', new_coin_path %> |
+<div class="nav justify-content-end">
+  <%= link_to t('new.coin'), new_coin_path, class: "btn btn-primary " %> 
+</div>
 

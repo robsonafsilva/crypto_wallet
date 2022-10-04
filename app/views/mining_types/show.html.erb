@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
+<form>
+  <div class="form-group">
+    <%= label_tag nil, @mining_type.class.human_attribute_name(:description) %>
+    <%= text_field_tag nil,@mining_type.description, class: "form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>Descrição:</strong>
-  <%= @mining_type.description %>
-</p>
+  <div class="form-group">
+    <%= label_tag nil, @mining_type.class.human_attribute_name(:acronym) %>
+    <%= text_field_tag nil, @mining_type.acronym, class: "form-control", disabled: true %>
+  </div>
+</form>
 
-<p>
-  <strong>Sigla:</strong>
-  <%= @mining_type.acronym %>
-</p>
-
-<%= link_to 'Editar', edit_mining_type_path(@mining_type) %> |
-<%= link_to 'Voltar', mining_types_path %>
+<div class="nav justify-content-end">
+  <%= link_to t('links.edit'), edit_mining_type_path(@mining_type), class: "btn btn-primary mr-2" %> 
+  <%= link_to t('links.back'),  mining_types_path, class: "btn btn-primary" %>
+</div>

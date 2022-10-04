@@ -1,7 +1,26 @@
 pt-BR:
-  actual_locale: "Português do Brasil"
+  current_locale: "Português do Brasil"
+  welcome: "Bem-Vindo!"
+  messages:
+    welcome: "Este é o Crypto Wallet, uma app para cadastrar crypto moedas!"
+    menu: "Para iniciar selecione uma das opções abaixo:"
+    confirm: "Tem certeza?"
+  calendar: "Data: "
+  coin_button: "Moedas"
+  mining_button: "Tipos Mineração"
   hello: "Olá Mundo!"
   links:
     edit: 'Editar'
     show: 'Mostrar'
     delete: 'Apagar'
+    new: 'Novo'
+    back: 'Voltar'
+  new:
+    coin: 'Nova Moeda'
+    mining_type: 'Novo Tipo de Mineração'
+  editing:
+    coin: 'Editando Moeda'
+    mining_type: 'Editando Tipo de Mineração'
+  showing:
+    coin: 'Mostrando Moeda'
+    mining_type: 'Mostrando Tipo de Mineração'
